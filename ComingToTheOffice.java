@@ -31,8 +31,7 @@ public class ComingToTheOffice {
 		  a = sc.nextInt();
 		  b = sc.nextInt();
 		  c = sc.nextInt();
-
-		  //時間が1分未満か30分より上だった場合エラー
+		  //時間が1分未満か、30分を超えている場合はエラー
 		if(a < 1 || a > 30 || b < 1 || b > 30 || c < 1 || c > 30) {
 		  message = "注意:時間は1～30分以内にして下さい。";
 		  System.out.println(message);
@@ -50,8 +49,7 @@ public class ComingToTheOffice {
 		//電車の本数を受け取り、本数分の電車時刻を受け取る
 		try {
 		  N = sc.nextInt();
-
-		  //本数は1～180まで。範囲外の場合はエラ
+		  //本数は1～180まで。範囲外の場合はエラー
 		  if(N < 1 || N > 180) {
 		    message = "注意:本数は1～180本以内にして下さい。";
 	        System.out.println(message);
@@ -72,7 +70,6 @@ public class ComingToTheOffice {
 		    int h_i = sc.nextInt();
 		    int m_i = sc.nextInt();
 		    LocalTime lt = LocalTime.of(h_i, m_i);
-
 		    //電車時刻の範囲は6:00～8:59。範囲外はエラー
 		    if(lt.isBefore(LocalTime.of(6, 0)) || lt.isAfter(timeLimit)) {
 			  message = "注意:電車時刻の範囲は6:00～8:59以内にして下さい。";
@@ -89,9 +86,8 @@ public class ComingToTheOffice {
 		  sc.close();
 		}
 
-		//最遅電車時刻をLatestTrainTime変数に格納
+		//LatestTrainTime変数を用意し、最遅電車時刻を格納する
 		LocalTime latestTrainTime = LocalTime.of(0, 0);
-
 		for(LocalTime t: trainTimeList) {
 		  //最遅電車時刻 < 8:59 - (全区間の時間 - 1)
 		  if(t.isBefore(timeLimit.minusMinutes(a + b + c - 1))) {
