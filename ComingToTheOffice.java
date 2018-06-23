@@ -63,7 +63,10 @@ public class ComingToTheOffice {
 		  return;
 		}
 
-		//時間と分を受け取って時刻(LocalTime)に変換、ArrayListにセット
+		/**時間と分を受け取って時刻(LocalTime)に変換、ArrayListにセット
+		 * h_i … 〇時
+		 * m_i … ○○分
+		 * */
 		try {
 		  for(int i = 0; i < N; i++) {
 		    int h_i = sc.nextInt();
