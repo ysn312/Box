@@ -40,11 +40,11 @@ public class ComingToTheOffice {
 		  return;
 		  }
 		}catch(InputMismatchException e) {
-			//数値ではない場合
-		    message = "注意:数値を入力してください。";
-		    System.out.println(message);
-		    sc.close();
-		    return;
+		  //数値ではない場合
+		  message = "注意:数値を入力してください。";
+		  System.out.println(message);
+		  sc.close();
+		  return;
 		}
 
 		//電車の本数を受け取り、本数分の電車時刻を受け取る
@@ -96,7 +96,7 @@ public class ComingToTheOffice {
 		  //最遅電車時刻 < 8:59 - (全区間の時間 - 1)
 		  if(t.isBefore(timeLimit.minusMinutes(a + b + c - 1))) {
 			if(t.isAfter(latestTrainTime)) {
-				latestTrainTime = t;
+			  latestTrainTime = t;
 			}
 		  }
 		}
@@ -107,8 +107,8 @@ public class ComingToTheOffice {
 		 * 最遅出社時刻 = 最遅電車時刻 - a分*/
 		System.out.println("最遅出社時刻は、" + latestTrainTime.minusMinutes(a) + " です。");
 		}else {
-			//どの電車時刻も該当しない場合（latestTrainTimeが0:00の状態）
-			System.out.println("残念ですが、8:59には間に合いません。");
+		  //どの電車時刻も該当しない場合（latestTrainTimeが0:00の状態）
+		  System.out.println("残念ですが、8:59には間に合いません。");
 		}
 	}
 }
