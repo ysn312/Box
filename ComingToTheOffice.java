@@ -109,7 +109,7 @@ public class ComingToTheOffice {
 		/**変更点:条件分岐を変更しました。
 		 *
 		 * 確認:最遅電車時刻がちゃんと入っている事。かつ、
-		 *      8:59までに間に合うかを確認する。→  最遅電車時刻 + 全区間 -1 < 8:59 */
+		 *      8:59までに間に合うかを確認する。→  （最遅電車時刻 + 全区間 -1） < 8:59 */
 		if (!latestTrainTime.equals(LocalTime.of(0, 0)) &&
 				latestTrainTime.plusMinutes(requiredTimeA + requiredTimeB + requiredTimeC - 1)
 						.isBefore(timeLimit)) {
