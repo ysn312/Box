@@ -4,6 +4,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class ComingToTheOffice {
+
 	public static void main(String[] args) throws Exception {
 
 		Scanner sc = new Scanner(System.in);
@@ -36,7 +37,7 @@ public class ComingToTheOffice {
 			//時間が1分未満か、30分を超えている場合はエラー
 			if (requiredTimeA < 1 || requiredTimeA > 30 ||
 					requiredTimeB < 1 || requiredTimeB > 30 ||
-						requiredTimeC < 1 || requiredTimeC > 30) {
+					requiredTimeC < 1 || requiredTimeC > 30) {
 				message = "注意:時間は1～30分以内にして下さい。";
 				System.out.println(message);
 				sc.close();
@@ -93,23 +94,25 @@ public class ComingToTheOffice {
 			sc.close();
 		}
 
-		/**latestTrainTime変数を用意し、最遅電車時刻を格納する。
+		/*変更点：新たに変数tmpを追加。
+		 * *変数latestTrainTimeを用意し最遅電車時刻を格納する。
 		 *（無い場合、0:0のまま。）*/
 		LocalTime latestTrainTime = LocalTime.of(0, 0);
+		/*tmp = 8:59 - (requiredTimeB + requiredTimeC)*/
+		LocalTime tmp = timeLimit.minusMinutes(requiredTimeB + requiredTimeC);
+
 		for (LocalTime t : trainTimeList) {
 			/**変更点:最遅電車時刻を修正しました。
-			 * 最遅電車時刻 < 8:59 - (requiredTimeB + requiredTimeC - 1)*/
-			if (t.isBefore(timeLimit.minusMinutes(requiredTimeB + requiredTimeC - 1))) {
-				if (t.isAfter(latestTrainTime)) {
-					latestTrainTime = t;
-				}
+			 * t <= 8:59 - (requiredTimeB + requiredTimeC)であれば格納する。*/
+			if (t.isBefore(tmp) || t.equals(tmp)) {
+				latestTrainTime = t;
 			}
 		}
 
 		/**変更点:条件分岐を変更しました。
 		 *
 		 * 確認:最遅電車時刻がちゃんと入っている事。かつ、
-		 *      8:59までに間に合うかを確認する。→  （最遅電車時刻 + 全区間 -1） < 8:59 */
+		 *      8:59までに間に合うかを確認する。→  最遅電車時刻 + 全区間 -1 < 8:59 */
 		if (!latestTrainTime.equals(LocalTime.of(0, 0)) &&
 				latestTrainTime.plusMinutes(requiredTimeA + requiredTimeB + requiredTimeC - 1)
 						.isBefore(timeLimit)) {
