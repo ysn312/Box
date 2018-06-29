@@ -5,6 +5,11 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.stream.Collectors;
 
+/**
+ * @author yuu.s
+ *
+ * */
+
 public class HateNumber {
 	/** 入力>嫌いな数字のインデックス */
 	public static final int INDEX_HATE_NUMBER = 0;
@@ -37,7 +42,7 @@ public class HateNumber {
 		}
 
 		// 嫌いな数字をinputStrListに入れる。
-		if (inputHateNum >= 0 && inputHateNum <= 9) {
+		if (0 <= inputHateNum && inputHateNum <= 9) {
 			inputStrList.add(String.valueOf(inputHateNum));
 		} else {
 			// 数字が1~9の範囲外の場合
@@ -58,7 +63,7 @@ public class HateNumber {
 		}
 
 		// 部屋数をinputStrListに入れる
-		if (inputRoomCnt >= 1 && inputRoomCnt <= 100) {
+		if (1<= inputRoomCnt && inputRoomCnt <= 100) {
 			inputStrList.add(String.valueOf(inputRoomCnt));
 		} else {
 			// 部屋数が1~100の範囲外の場合
@@ -79,7 +84,7 @@ public class HateNumber {
 			}
 
 			// 数値が1～1000以内だったら、部屋番号をリストに格納する
-			if (inputRoomNum >= 1 && inputRoomNum <= 1000) {
+			if (1 <= inputRoomNum && inputRoomNum <= 1000) {
 				roomNumList.add(String.valueOf(inputRoomNum));
 			} else {
 				// 範囲外の場合
