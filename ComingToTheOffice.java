@@ -9,120 +9,118 @@ public class ComingToTheOffice {
 
 		Scanner sc = new Scanner(System.in);
 
-		/**•ÏX“_:Š—LŠÔE“dÔ–{”‚Ì•Ï”–¼‚ğC³‚µ‚Ü‚µ‚½B
-		 *
-		 * “ü—Í„Še‹æŠÔ‚ÌŠ—LŠÔ
-		 * ‰Æ¨A‰wcrequiredTimeA•ª
-		 * A‰w¨B‰wcrequiredTimeB•ª
-		 * B‰w¨‰ïĞcrequiredTimeC•ª
+		/**
+		 * å…¥åŠ›ï¼šå„åŒºé–“ã®æ‰€æœ‰æ™‚é–“
+		 * å®¶â†’Aé§…â€¦requiredTimeAåˆ†
+		 * Aé§…â†’Bé§…â€¦requiredTimeBåˆ†
+		 * Bé§…â†’ä¼šç¤¾â€¦requiredTimeCåˆ†
 		 * */
 		int requiredTimeA = 0;
 		int requiredTimeB = 0;
 		int requiredTimeC = 0;
-		/**“ü—Í„“dÔ‚Ì–{”*/
+		/**å…¥åŠ›ï¼é›»è»Šã®æœ¬æ•°*/
 		int trainNumber = 0;
 
-		/**ƒGƒ‰[ƒƒbƒZ[ƒW—p*/
+		/**ã‚¨ãƒ©ãƒ¼ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ç”¨*/
 		String message;
-		/**“dÔ—pƒŠƒXƒg*/
+		/**é›»è»Šæ™‚åˆ»ç”¨ãƒªã‚¹ãƒˆ*/
 		ArrayList<LocalTime> trainTimeList = new ArrayList<>();
-		/**Å’x‚Å‰ïĞ‚É’…‚©‚È‚¢‚Æ‚¢‚¯‚È‚¢ŠÔ(8:59)*/
+		/**æœ€é…ã§ä¼šç¤¾ã«ç€ã‹ãªã„ã¨ã„ã‘ãªã„æ™‚é–“(8:59)*/
 		LocalTime timeLimit = LocalTime.of(8, 59);
 
 		try {
-			//Še‹æŠÔ‚ÌŠÔ‚ğó‚¯æ‚é
+			//å„åŒºé–“ã®æ™‚é–“ã‚’å—ã‘å–ã‚‹
 			requiredTimeA = sc.nextInt();
 			requiredTimeB = sc.nextInt();
 			requiredTimeC = sc.nextInt();
-			//ŠÔ‚ª1•ª–¢–‚©A30•ª‚ğ’´‚¦‚Ä‚¢‚éê‡‚ÍƒGƒ‰[
-			if (requiredTimeA < 1 || requiredTimeA > 30 ||
-					requiredTimeB < 1 || requiredTimeB > 30 ||
-					requiredTimeC < 1 || requiredTimeC > 30) {
-				message = "’ˆÓ:ŠÔ‚Í1`30•ªˆÈ“à‚É‚µ‚Ä‰º‚³‚¢B";
+
+			//æ™‚é–“ãŒ1åˆ†æœªæº€ã‹ã€30åˆ†ã‚’è¶…ãˆã¦ã„ã‚‹å ´åˆã¯ã‚¨ãƒ©ãƒ¼
+			if (requiredTimeA < 1 || 30 < requiredTimeA  ||
+					requiredTimeB < 1 || 30 < requiredTimeB  ||
+					requiredTimeC < 1 || 30 < requiredTimeC) {
+
+				message = "æ³¨æ„:æ™‚é–“ã¯1ï½30åˆ†ä»¥å†…ã«ã—ã¦ä¸‹ã•ã„ã€‚";
 				System.out.println(message);
 				sc.close();
 				return;
 			}
 		} catch (InputMismatchException e) {
-			//”’l‚Å‚Í‚È‚¢ê‡
-			message = "’ˆÓ:”’l‚ğ“ü—Í‚µ‚Ä‚­‚¾‚³‚¢B";
+			//æ•°å€¤ã§ã¯ãªã„å ´åˆ
+			message = "æ³¨æ„:æ•°å€¤ä»¥å¤–ã€ã¾ãŸã¯å…¥åŠ›ãŒä¸æ­£ã§ã™ã€‚";
 			System.out.println(message);
 			sc.close();
 			return;
 		}
 
-		//“dÔ‚Ì–{”‚ğó‚¯æ‚èA–{”•ª‚Ì“dÔ‚ğó‚¯æ‚é
+		//é›»è»Šã®æœ¬æ•°ã‚’å—ã‘å–ã‚Šã€æœ¬æ•°åˆ†ã®é›»è»Šæ™‚åˆ»ã‚’å—ã‘å–ã‚‹
 		try {
 			trainNumber = sc.nextInt();
-			//–{”‚Í1`180‚Ü‚ÅB”ÍˆÍŠO‚Ìê‡‚ÍƒGƒ‰[
-			if (trainNumber < 1 || trainNumber > 180) {
-				message = "’ˆÓ:–{”‚Í1`180–{ˆÈ“à‚É‚µ‚Ä‰º‚³‚¢B";
+			//æœ¬æ•°ã¯1ï½180ã¾ã§ã€‚ç¯„å›²å¤–ã®å ´åˆã¯ã‚¨ãƒ©ãƒ¼
+			if (trainNumber < 1 || 180 < trainNumber) {
+				message = "æ³¨æ„:æœ¬æ•°ã¯1ï½180æœ¬ä»¥å†…ã«ã—ã¦ä¸‹ã•ã„ã€‚";
 				System.out.println(message);
 				sc.close();
 				return;
 			}
 		} catch (InputMismatchException e) {
-			//”’l‚Å‚Í‚È‚¢ê‡
-			message = "’ˆÓ:”’l‚ğ“ü—Í‚µ‚Ä‚­‚¾‚³‚¢B";
+			//æ•°å€¤ã§ã¯ãªã„å ´åˆ
+			message = "æ³¨æ„:æ•°å€¤ä»¥å¤–ã€ã¾ãŸã¯å…¥åŠ›ãŒä¸æ­£ã§ã™ã€‚";
 			System.out.println(message);
 			sc.close();
 			return;
 		}
 
-		/**ŠÔ‚Æ•ª‚ğó‚¯æ‚Á‚Ä(LocalTime)‚É•ÏŠ·AArrayList‚ÉƒZƒbƒg
-		 * h_i c Z
-		 * m_i c ››•ª
+		/* æ™‚é–“ã¨åˆ†ã‚’å—ã‘å–ã£ã¦æ™‚åˆ»(LocalTime)ã«å¤‰æ›ã€ArrayListã«ã‚»ãƒƒãƒˆ
+		 * h_i â€¦ ã€‡æ™‚
+		 * m_i â€¦ â—‹â—‹åˆ†
 		 * */
 		try {
 			for (int i = 0; i < trainNumber; i++) {
 				int h_i = sc.nextInt();
 				int m_i = sc.nextInt();
 				LocalTime lt = LocalTime.of(h_i, m_i);
-				//“dÔ‚Ì”ÍˆÍ‚Í6:00`8:59B”ÍˆÍŠO‚ÍƒGƒ‰[
+				//é›»è»Šæ™‚åˆ»ã®ç¯„å›²ã¯6:00ï½8:59ã€‚ç¯„å›²å¤–ã¯ã‚¨ãƒ©ãƒ¼
 				if (lt.isBefore(LocalTime.of(6, 0)) || lt.isAfter(timeLimit)) {
-					message = "’ˆÓ:“dÔ‚Ì”ÍˆÍ‚Í6:00`8:59ˆÈ“à‚É‚µ‚Ä‰º‚³‚¢B";
+					message = "æ³¨æ„:é›»è»Šæ™‚åˆ»ã®ç¯„å›²ã¯6:00ï½8:59ä»¥å†…ã«ã—ã¦ä¸‹ã•ã„ã€‚";
 					System.out.println(message);
 					return;
 				}
 				trainTimeList.add(lt);
 			}
 		} catch (InputMismatchException e) {
-			message = "’ˆÓ:”’l‚ğ“ü—Í‚µ‚Ä‚­‚¾‚³‚¢B";
+			message = "æ³¨æ„:æ•°å€¤ä»¥å¤–ã€ã¾ãŸã¯å…¥åŠ›ãŒä¸æ­£ã§ã™ã€‚";
 			System.out.println(message);
 			return;
 		} finally {
 			sc.close();
 		}
 
-		/*•ÏX“_FV‚½‚É•Ï”tmp‚ğ’Ç‰ÁB
-		 * *•Ï”latestTrainTime‚ğ—pˆÓ‚µÅ’x“dÔ‚ğŠi”[‚·‚éB
-		 *i–³‚¢ê‡A0:0‚Ì‚Ü‚ÜBj*/
+		/* æœ€é…é›»è»Šæ™‚åˆ»ã‚’æ ¼ç´ã™ã‚‹ã€‚
+		 *ï¼ˆç„¡ã„å ´åˆã€0:0ã®ã¾ã¾ã€‚ï¼‰*/
 		LocalTime latestTrainTime = LocalTime.of(0, 0);
 		/*tmp = 8:59 - (requiredTimeB + requiredTimeC)*/
 		LocalTime tmp = timeLimit.minusMinutes(requiredTimeB + requiredTimeC);
 
 		for (LocalTime t : trainTimeList) {
-			/**•ÏX“_:Å’x“dÔ‚ğC³‚µ‚Ü‚µ‚½B
-			 * t <= 8:59 - (requiredTimeB + requiredTimeC)‚Å‚ ‚ê‚ÎŠi”[‚·‚éB*/
+			// t <= 8:59 - (requiredTimeB + requiredTimeC)ã§ã‚ã‚Œã°æ ¼ç´ã™ã‚‹ã€‚
 			if (t.isBefore(tmp) || t.equals(tmp)) {
 				latestTrainTime = t;
 			}
 		}
 
-		/**•ÏX“_:ğŒ•ªŠò‚ğ•ÏX‚µ‚Ü‚µ‚½B
-		 *
-		 * Šm”F:Å’x“dÔ‚ª‚¿‚á‚ñ‚Æ“ü‚Á‚Ä‚¢‚é–B‚©‚ÂA
-		 *      8:59‚Ü‚Å‚ÉŠÔ‚É‡‚¤‚©‚ğŠm”F‚·‚éB¨  Å’x“dÔ + ‘S‹æŠÔ -1 < 8:59 */
+		/*ç¢ºèª:æœ€é…é›»è»Šæ™‚åˆ»ãŒã¡ã‚ƒã‚“ã¨å…¥ã£ã¦ã„ã‚‹äº‹ã€‚ã‹ã¤ã€
+		 *     8:59ã¾ã§ã«é–“ã«åˆã†ã‹ã‚’ç¢ºèªã™ã‚‹ã€‚â†’  æœ€é…é›»è»Šæ™‚åˆ» + å…¨åŒºé–“ -1 < 8:59 */
 		if (!latestTrainTime.equals(LocalTime.of(0, 0)) &&
 				latestTrainTime.plusMinutes(requiredTimeA + requiredTimeB + requiredTimeC - 1)
 						.isBefore(timeLimit)) {
-			/*Å’xoĞ‚ğ•\¦‚·‚éB
-			 * Å’xoĞ = Å’x“dÔ - a•ª*/
-			System.out.println("Å’xoĞ‚ÍA" +
-					latestTrainTime.minusMinutes(requiredTimeA) + " ‚Å‚·B");
+
+			/*æœ€é…å‡ºç¤¾æ™‚åˆ»ã‚’è¡¨ç¤ºã™ã‚‹ã€‚
+			 * æœ€é…å‡ºç¤¾æ™‚åˆ» = æœ€é…é›»è»Šæ™‚åˆ» - aåˆ†*/
+			System.out.println("æœ€é…å‡ºç¤¾æ™‚åˆ»ã¯ã€" +
+					latestTrainTime.minusMinutes(requiredTimeA) + " ã§ã™ã€‚");
 		} else {
-			//‚Ç‚Ì“dÔ‚àŠY“–‚µ‚È‚¢ê‡ilatestTrainTime‚ª0:00‚Ìó‘Ôj
-			System.out.println("c”O‚Å‚·‚ªA8:59‚É‚ÍŠÔ‚É‡‚¢‚Ü‚¹‚ñB");
+			//ã©ã®é›»è»Šæ™‚åˆ»ã‚‚è©²å½“ã—ãªã„å ´åˆï¼ˆlatestTrainTimeãŒ0:00ã®çŠ¶æ…‹ï¼‰
+			System.out.println("æ®‹å¿µã§ã™ãŒã€8:59ã«ã¯é–“ã«åˆã„ã¾ã›ã‚“ã€‚");
 		}
 	}
 }
