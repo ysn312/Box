@@ -96,8 +96,7 @@ public class HateNumber {
 		// スキャナーをクローズ
 		sc.close();
 
-		/*
-		 * stream()とfilter()とCollector()メソッドを使い、
+		/* stream()とfilter()とCollector()メソッドを使い、
 		 * 嫌いな数字が入ってない部屋番号のみを、withoutHateNumに格納。
 		 * filter()メソッドでは、indexOfメソッドの結果が-1(嫌いな数字が入っていない)となる部屋番号のみ該当する。 */
 		List<String> withoutHateNum = roomNumList.stream()
