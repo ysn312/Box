@@ -13,7 +13,7 @@ import java.util.stream.Collectors;
 public class HateNumber {
 	/** 入力>嫌いな数字のインデックス */
 	public static final int INDEX_HATE_NUMBER = 0;
-	/**例外用エラーメッセージ*/
+	/** 例外用エラーメッセージ */
 	public static final String ERROR_MSG = "エラー：数字以外、または入力が不正です。";
 
 	public static void main(String[] args) {
