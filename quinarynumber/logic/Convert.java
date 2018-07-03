@@ -1,6 +1,11 @@
 package logic;
 
-public class ConvertStr {
+/**
+*
+* @author yuu.s
+* @version 2018/7/2
+* */
+public class Convert {
 	/** 5進数変換チェック用配列 */
 	public static final String[] quinaryWords = { "A", "B", "C", "D", "E" };
 
