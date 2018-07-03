@@ -10,6 +10,8 @@ import logic.ConvertStr;
  * @version 2018/7/2
  * */
 public class QuinaryNumber {
+	/** 5進数変換用変数*/
+	public static final int quinaryNum = 5;
 
 	public static void main(String[] args) {
 		/** 入力受け取り：文字列（5進数） */
@@ -40,9 +42,10 @@ public class QuinaryNumber {
 		}
 
 		// 5進数⇒10進数に変換し、合計を格納する
-		int amountNum = Integer.parseInt(fifthNo1, 5) + Integer.parseInt(fifthNo2, 5);
+		int amountNum = Integer.parseInt(fifthNo1, quinaryNum)
+				+ Integer.parseInt(fifthNo2, quinaryNum);
 		// 10進数での合計を5進数に変換
-		String amountFifthNum = Integer.toString(amountNum, 5);
+		String amountFifthNum = Integer.toString(amountNum, quinaryNum);
 
 		// 戻された文字列を出力する
 		System.out.println(fc.convertStr(amountFifthNum));
