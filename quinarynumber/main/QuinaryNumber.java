@@ -7,7 +7,6 @@ import logic.Convert;
 /**
  *
  * @author yuu.s
- * @version 2018/7/2
  * */
 public class QuinaryNumber {
 	/** 5進数変換用変数 */

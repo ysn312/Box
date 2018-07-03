@@ -3,7 +3,6 @@ package logic;
 /**
 *
 * @author yuu.s
-* @version 2018/7/2
 * */
 public class Convert {
 	/** 文字列チェック用配列 */
