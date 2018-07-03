@@ -5,8 +5,8 @@ import java.util.Scanner;
 import logic.Convert;
 
 /**
- *
  * @author yuu.s
+ *
  * */
 public class QuinaryNumber {
 	/** 5進数変換用変数 */

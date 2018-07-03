@@ -1,8 +1,8 @@
 package logic;
 
 /**
-*
 * @author yuu.s
+*
 * */
 public class Convert {
 	/** 文字列チェック用配列 */
