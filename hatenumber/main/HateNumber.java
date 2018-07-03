@@ -7,47 +7,41 @@ import java.util.stream.Collectors;
 
 /**
  * @author yuu.s
- *
+ * @version 1.1 2018/7/4
  * */
 
 public class HateNumber {
-	/** 入力>嫌いな数字のインデックス */
-	public static final int INDEX_HATE_NUMBER = 0;
 	/** 例外用エラーメッセージ */
 	public static final String ERROR_MSG = "エラー：数字以外、または入力が不正です。";
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 
-		/** 入力受け取り：嫌いな数字 */
-		int inputHateNum = 0;
+		/** 入力受け取り：嫌いな数字（String型） */
+		String inputHateNum;
 		/** 入力受け取り：部屋数 */
 		int inputRoomCnt = 0;
 		/** 入力受け取り：部屋番号 */
 		int inputRoomNum = 0;
-		/** 嫌いな数字と、部屋数を格納するリスト（String型で格納） */
-		List<String> inputStrList = new ArrayList<>();
 		/** 部屋番号を格納するリスト （String型で格納） */
 		List<String> roomNumList = new ArrayList<>();
 
-		// 嫌いな数字を受け取る
+		/* 嫌いな数字を受け取る
+		 * ※inputHateNum変数は下記filter()メソッドで使うため、
+		 * 実質finalな変数の必要がある。
+		 * */
 		try {
-			String hateNum = sc.next();
-			inputHateNum = Integer.parseInt(hateNum);
+			inputHateNum = sc.next();
+			// 入力された数字が1~9の範囲外の場合、エラー
+			if (Integer.parseInt(inputHateNum) < 0 || 9 < Integer.parseInt(inputHateNum)) {
+				sc.close();
+				System.out.println("注意：嫌いな数字は0～9以内で入力してください。");
+				return;
+			}
 		} catch (NumberFormatException e) {
 			// 数値でない場合
 			sc.close();
 			System.out.println(ERROR_MSG);
-			return;
-		}
-
-		// 嫌いな数字をinputStrListに入れる。
-		if (0 <= inputHateNum && inputHateNum <= 9) {
-			inputStrList.add(String.valueOf(inputHateNum));
-		} else {
-			// 数字が1~9の範囲外の場合
-			sc.close();
-			System.out.println("注意：嫌いな数字は0～9以内で入力してください。");
 			return;
 		}
 
@@ -62,11 +56,8 @@ public class HateNumber {
 			return;
 		}
 
-		// 部屋数をinputStrListに入れる
-		if (1<= inputRoomCnt && inputRoomCnt <= 100) {
-			inputStrList.add(String.valueOf(inputRoomCnt));
-		} else {
-			// 部屋数が1~100の範囲外の場合
+		// 部屋数が1~100の範囲外の場合、エラー
+		if (inputRoomCnt < 0 || 100 < inputRoomCnt) {
 			sc.close();
 			System.out.println("注意：部屋数は1~100以内で入力してください。");
 			return;
@@ -98,9 +89,10 @@ public class HateNumber {
 
 		/* stream()とfilter()とCollector()メソッドを使い、
 		 * 嫌いな数字が入ってない部屋番号のみを、withoutHateNumに格納。
-		 * filter()メソッドでは、indexOfメソッドの結果が-1(嫌いな数字が入っていない)となる部屋番号のみ該当する。 */
+		 * filter()メソッドでは、contains()メソッドの結果がtrue(嫌いな数字が入っていない)
+		 * となる部屋番号のみ該当する。 */
 		List<String> withoutHateNum = roomNumList.stream()
-				.filter(s -> s.indexOf(inputStrList.get(INDEX_HATE_NUMBER)) == -1).collect(Collectors.toList());
+				.filter((s) -> !s.contains(inputHateNum)).collect(Collectors.toList());
 
 		// 格納された部屋番号を入力順に出力する。
 		if (!(withoutHateNum.isEmpty())) {
