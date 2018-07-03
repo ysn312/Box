@@ -55,30 +55,30 @@ public class Convert {
 
 	// 文字列を5進数に変換するメソッド
 	public String inputConvertQuinary(String inputAddend) {
-		String fifthNo = "";
+		String addendNo = "";
 
 		// for文とswitch文を使い、1文字ずつ5進数に変換
 		for (int j = 0; j < inputAddend.length(); j++) {
 			switch (inputAddend.charAt(j)) {
 			case 'A':
-				fifthNo += '0';
+				addendNo += '0';
 				break;
 			case 'B':
-				fifthNo += '1';
+				addendNo += '1';
 				break;
 			case 'C':
-				fifthNo += '2';
+				addendNo += '2';
 				break;
 			case 'D':
-				fifthNo += '3';
+				addendNo += '3';
 				break;
 			case 'E':
-				fifthNo += '4';
+				addendNo += '4';
 				break;
 			}
 		}
 		// 変換した数値を返す
-		return fifthNo;
+		return addendNo;
 	}
 
 	// 5進数を文字列に変換するメソッド
