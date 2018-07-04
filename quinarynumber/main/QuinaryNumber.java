@@ -2,7 +2,7 @@ package main;
 
 import java.util.Scanner;
 
-import logic.Convert;
+import logic.StrNumConvert;
 
 /**
  * @author yuu.s
@@ -20,7 +20,7 @@ public class QuinaryNumber {
 		String addendNo1;
 		String addendNo2;
 		/** 変換処理用 */
-		Convert fc = new Convert();
+		StrNumConvert convert = new StrNumConvert();
 
 		Scanner sc = new Scanner(System.in);
 
@@ -32,10 +32,10 @@ public class QuinaryNumber {
 		sc.close();
 
 		// 入力が正しいか、ConvertクラスのinputCheck()メソッドを使って確認する
-		if (fc.inputCheck(inputAddend1) && fc.inputCheck(inputAddend2)) {
+		if (convert.inputCheck(inputAddend1) && convert.inputCheck(inputAddend2)) {
 			// 受け取った2つの文字列を5進数に変換
-			addendNo1 = fc.inputConvertQuinary(inputAddend1);
-			addendNo2 = fc.inputConvertQuinary(inputAddend2);
+			addendNo1 = convert.inputConvertQuinary(inputAddend1);
+			addendNo2 = convert.inputConvertQuinary(inputAddend2);
 		} else {
 			// 入力が不正の場合
 			return;
@@ -48,6 +48,6 @@ public class QuinaryNumber {
 		String amountFifthNum = Integer.toString(amountNum, quinaryNum);
 
 		// ConvertクラスのconvertStr()メソッドを使い、合計を文字列に変換する
-		System.out.println(fc.convertStr(amountFifthNum));
+		System.out.println(convert.convertStr(amountFifthNum));
 	}
 }

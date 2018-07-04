@@ -4,7 +4,7 @@ package logic;
 * @author yuu.s
 *
 * */
-public class Convert {
+public class StrNumConvert {
 	/** 文字列チェック用配列 */
 	public static final String[] quinaryWords = { "A", "B", "C", "D", "E" };
 
