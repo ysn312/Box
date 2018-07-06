@@ -82,10 +82,10 @@ public class StrNumConvert {
 	}
 
 	// 5進数を文字列に変換するメソッド
-	public String convertStr(String amountFifthNum) {
+	public String convertStr(String amountQuinaryNum) {
 		String str = "";
-		for (int k = 0; k < amountFifthNum.length(); k++) {
-			switch (amountFifthNum.charAt(k)) {
+		for (int k = 0; k < amountQuinaryNum.length(); k++) {
+			switch (amountQuinaryNum.charAt(k)) {
 			case '0':
 				str += 'A';
 				break;

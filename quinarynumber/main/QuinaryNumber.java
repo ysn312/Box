@@ -45,9 +45,9 @@ public class QuinaryNumber {
 		int amountNum = Integer.parseInt(addendNo1, quinaryNum)
 				+ Integer.parseInt(addendNo2, quinaryNum);
 		// 10進数での合計を5進数に変換（String型で格納）
-		String amountFifthNum = Integer.toString(amountNum, quinaryNum);
+		String amountQuinaryNum = Integer.toString(amountNum, quinaryNum);
 
 		// ConvertクラスのconvertStr()メソッドを使い、合計を文字列に変換する
-		System.out.println(convert.convertStr(amountFifthNum));
+		System.out.println(convert.convertStr(amountQuinaryNum));
 	}
 }
