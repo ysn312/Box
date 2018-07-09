@@ -31,7 +31,7 @@ public class QuinaryNumber {
 		// スキャナーをクローズ
 		sc.close();
 
-		// 入力が正しいか、ConvertクラスのinputCheck()メソッドを使って確認する
+		// 入力が正しいか、convertインスタンスのinputCheck()メソッドを使って確認する
 		if (convert.inputCheck(inputAddend1) && convert.inputCheck(inputAddend2)) {
 			// 受け取った2つの文字列を5進数に変換
 			addendNo1 = convert.inputConvertQuinary(inputAddend1);
@@ -47,7 +47,7 @@ public class QuinaryNumber {
 		// 10進数での合計を5進数に変換（String型で格納）
 		String amountQuinaryNum = Integer.toString(amountNum, quinaryNum);
 
-		// ConvertクラスのconvertStr()メソッドを使い、合計を文字列に変換する
+		// convertインスタンスのconvertStr()メソッドを使い、合計を文字列に変換する
 		System.out.println(convert.convertStr(amountQuinaryNum));
 	}
 }

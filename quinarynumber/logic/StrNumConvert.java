@@ -55,55 +55,55 @@ public class StrNumConvert {
 
 	// 文字列を5進数に変換するメソッド
 	public String inputConvertQuinary(String inputAddend) {
-		String addendNo = "";
+		StringBuffer addendNum = new StringBuffer();
 
 		// for文とswitch文を使い、1文字ずつ5進数に変換
 		for (int j = 0; j < inputAddend.length(); j++) {
 			switch (inputAddend.charAt(j)) {
 			case 'A':
-				addendNo += '0';
+				addendNum.append('0');
 				break;
 			case 'B':
-				addendNo += '1';
+				addendNum.append('1');
 				break;
 			case 'C':
-				addendNo += '2';
+				addendNum.append('2');
 				break;
 			case 'D':
-				addendNo += '3';
+				addendNum.append('3');
 				break;
 			case 'E':
-				addendNo += '4';
+				addendNum.append('4');
 				break;
 			}
 		}
 		// 変換した数値を返す
-		return addendNo;
+		return String.valueOf(addendNum);
 	}
 
 	// 5進数を文字列に変換するメソッド
 	public String convertStr(String amountQuinaryNum) {
-		String str = "";
+		StringBuffer str = new StringBuffer();
 		for (int k = 0; k < amountQuinaryNum.length(); k++) {
 			switch (amountQuinaryNum.charAt(k)) {
 			case '0':
-				str += 'A';
+				str.append('A');
 				break;
 			case '1':
-				str += 'B';
+				str.append('B');
 				break;
 			case '2':
-				str += 'C';
+				str.append('C');
 				break;
 			case '3':
-				str += 'D';
+				str.append('D');
 				break;
 			case '4':
-				str += 'E';
+				str.append('E');
 				break;
 			}
 		}
 		// 変換した文字列を返す
-		return str;
+		return String.valueOf(str);
 	}
 }
