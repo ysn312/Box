@@ -17,8 +17,8 @@ public class QuinaryNumber {
 		String inputAddend1 = null;
 		String inputAddend2 = null;
 		/** 文字列⇒5進数 格納用変数（String型で格納） */
-		String addendNo1;
-		String addendNo2;
+		String addendNum1;
+		String addendNum2;
 		/** 変換処理用 */
 		StrNumConvert convert = new StrNumConvert();
 
@@ -34,16 +34,16 @@ public class QuinaryNumber {
 		// 入力が正しいか、convertインスタンスのinputCheck()メソッドを使って確認する
 		if (convert.inputCheck(inputAddend1) && convert.inputCheck(inputAddend2)) {
 			// 受け取った2つの文字列を5進数に変換
-			addendNo1 = convert.inputConvertQuinary(inputAddend1);
-			addendNo2 = convert.inputConvertQuinary(inputAddend2);
+			addendNum1 = convert.inputConvertQuinary(inputAddend1);
+			addendNum2 = convert.inputConvertQuinary(inputAddend2);
 		} else {
 			// 入力が不正の場合
 			return;
 		}
 
 		// 5進数⇒10進数に変換し、合計を格納する
-		int amountNum = Integer.parseInt(addendNo1, quinaryNum)
-				+ Integer.parseInt(addendNo2, quinaryNum);
+		int amountNum = Integer.parseInt(addendNum1, quinaryNum)
+				+ Integer.parseInt(addendNum2, quinaryNum);
 		// 10進数での合計を5進数に変換（String型で格納）
 		String amountQuinaryNum = Integer.toString(amountNum, quinaryNum);
 
