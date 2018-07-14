@@ -105,7 +105,7 @@ public class StrNumConvert2 {
 
 		//for文を使い、sumQuinaryNumに10進数に変換した数値を入れていく
 		while (amountNum > quinaryNum) {
-			//addNumをquinaryNumで割った余りをsumQuinaryNumに入れる
+			//amountNumをquinaryNumで割った余りをsumQuinaryNumに入れる
 			sumQuinaryNum.append(amountNum % quinaryNum);
 			amountNum /= quinaryNum;
 		}
