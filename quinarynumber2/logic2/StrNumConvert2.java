@@ -94,6 +94,10 @@ public class StrNumConvert2 {
 		return convertNum;
 	}
 
+	/*
+	 * ここから進数変換メソッドを自作
+	 * */
+
 	//10進数⇒5進数へ変換するメソッド
 	public String sumConvertQuinary(int amountNum, int quinaryNum) {
 		//5進数に変換した数値格納用
@@ -111,6 +115,10 @@ public class StrNumConvert2 {
 		//decimalNumの文字列を逆さまにしてString型⇒int型に変換して戻す
 		return String.valueOf(sumQuinaryNum.reverse());
 	}
+
+	/*
+	 *
+	 * */
 
 	// 5進数を文字列に変換するメソッド
 	public String convertStr(String amountQuinaryNum) {
