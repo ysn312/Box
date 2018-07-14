@@ -90,7 +90,7 @@ public class StrNumConvert2 {
 		//10進数に変換した数値格納用
 		int convertNum = 0;
 
-		//for文を使い、amountNumの末尾(j)から、5の累乗を掛けていく
+		//for文を使い、addendNumの末尾(j)から、5の累乗を掛けていく
 		for (int i = 0, j = addendNum.length() - 1; i < addendNum.length(); i++, j--) {
 			convertNum += Character.getNumericValue(addendNum.charAt(j))
 					* Math.pow(quinaryNum, i);
@@ -103,7 +103,7 @@ public class StrNumConvert2 {
 		//5進数に変換した数値格納用
 		StringBuilder sumQuinaryNum = new StringBuilder();
 
-		//for文を使い、decimalNumに10進数に変換した数値を入れていく
+		//for文を使い、sumQuinaryNumに10進数に変換した数値を入れていく
 		while (amountNum > quinaryNum) {
 			//addNumをquinaryNumで割った余りをsumQuinaryNumに入れる
 			sumQuinaryNum.append(amountNum % quinaryNum);
@@ -112,7 +112,7 @@ public class StrNumConvert2 {
 		//割り切れなくなった数値を最後に格納する
 		sumQuinaryNum.append(amountNum);
 
-		//decimalNumの文字列を逆さまにしてString型⇒int型に変換して戻す
+		//sumQuinaryNumの文字列を逆さまにしてString型⇒int型に変換して戻す
 		return String.valueOf(sumQuinaryNum.reverse());
 	}
 
