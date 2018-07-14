@@ -41,7 +41,7 @@ public class QuinaryNumber2 {
 			return;
 		}
 
-		/* convert2インスタンスのconvertDecimal2()メソッドを使い、
+		/* convert2インスタンスのconvertDecimal()メソッドを使い、
 		 * 5進数⇒10進数に変換し、その合計を格納する*/
 		int amountNum = convert2.convertDecimal(addendNum1, quinaryNum)
 				+ convert2.convertDecimal(addendNum2, quinaryNum);
