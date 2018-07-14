@@ -81,6 +81,10 @@ public class StrNumConvert2 {
 		return String.valueOf(addendNum);
 	}
 
+	/*
+	 * ここから進数変換メソッドを自作
+	 * */
+
 	//5進数⇒10進数へ変換するメソッド
 	public int convertDecimal(String addendNum, int quinaryNum) {
 		//10進数に変換した数値格納用
@@ -93,10 +97,6 @@ public class StrNumConvert2 {
 		}
 		return convertNum;
 	}
-
-	/*
-	 * ここから進数変換メソッドを自作
-	 * */
 
 	//10進数⇒5進数へ変換するメソッド
 	public String sumConvertQuinary(int amountNum, int quinaryNum) {
