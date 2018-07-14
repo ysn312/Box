@@ -50,7 +50,7 @@ public class QuinaryNumber2 {
 		 * 10進数での合計を5進数に変換*/
 		String amountQuinaryNum = convert2.sumConvertQuinary(amountNum, quinaryNum);
 
-		// convertインスタンスのconvertStr()メソッドを使い、合計を文字列に変換する
+		// convert2インスタンスのconvertStr()メソッドを使い、合計を文字列に変換する
 		System.out.println(convert2.convertStr(amountQuinaryNum));
 	}
 }
