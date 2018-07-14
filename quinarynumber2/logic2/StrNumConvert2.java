@@ -55,7 +55,7 @@ public class StrNumConvert2 {
 
 	// 文字列を5進数に変換するメソッド
 	public String inputConvertQuinary(String inputAddend) {
-		StringBuffer addendNum = new StringBuffer();
+		StringBuilder addendNum = new StringBuilder();
 
 		// for文とswitch文を使い、1文字ずつ5進数に変換
 		for (int j = 0; j < inputAddend.length(); j++) {
