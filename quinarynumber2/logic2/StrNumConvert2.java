@@ -112,7 +112,7 @@ public class StrNumConvert2 {
 		//割り切れなくなった数値を最後に格納する
 		sumQuinaryNum.append(amountNum);
 
-		//sumQuinaryNumの文字列を逆さまにしてString型⇒int型に変換して戻す
+		//sumQuinaryNumの文字列を逆さまにしてint型⇒String型に変換して戻す
 		return String.valueOf(sumQuinaryNum.reverse());
 	}
 
