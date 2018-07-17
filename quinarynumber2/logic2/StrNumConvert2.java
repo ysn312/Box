@@ -100,7 +100,7 @@ public class StrNumConvert2 {
 
 	//10進数⇒5進数へ変換するメソッド
 	public String sumConvertQuinary(int amountNum, int quinaryNum) {
-		//5進数に変換した数値格納用
+		//5進数に変換した数値格納用(StringBuilder型)
 		StringBuilder sumQuinaryNum = new StringBuilder();
 
 		//for文を使い、sumQuinaryNumに10進数に変換した数値を入れていく
@@ -112,7 +112,7 @@ public class StrNumConvert2 {
 		//割り切れなくなったamountNumを最後に格納する
 		sumQuinaryNum.append(amountNum);
 
-		//sumQuinaryNumの文字列を逆さまにしてint型⇒String型に変換して戻す
+		//sumQuinaryNumの文字列を逆さまにし、String型に変換して戻す
 		return String.valueOf(sumQuinaryNum.reverse());
 	}
 
