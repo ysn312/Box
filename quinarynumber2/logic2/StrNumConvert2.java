@@ -61,24 +61,24 @@ public class StrNumConvert2 {
 		for (int j = 0; j < inputAddend.length(); j++) {
 			switch (inputAddend.charAt(j)) {
 			case 'A':
-				addendNum.append('0');
+				addendNum.append("0");
 				break;
 			case 'B':
-				addendNum.append('1');
+				addendNum.append("1");
 				break;
 			case 'C':
-				addendNum.append('2');
+				addendNum.append("2");
 				break;
 			case 'D':
-				addendNum.append('3');
+				addendNum.append("3");
 				break;
 			case 'E':
-				addendNum.append('4');
+				addendNum.append("4");
 				break;
 			}
 		}
 		// 変換した数値を返す
-		return String.valueOf(addendNum);
+		return addendNum.toString();
 	}
 
 	/*
@@ -126,23 +126,23 @@ public class StrNumConvert2 {
 		for (int k = 0; k < amountQuinaryNum.length(); k++) {
 			switch (amountQuinaryNum.charAt(k)) {
 			case '0':
-				str.append('A');
+				str.append("A");
 				break;
 			case '1':
-				str.append('B');
+				str.append("B");
 				break;
 			case '2':
-				str.append('C');
+				str.append("C");
 				break;
 			case '3':
-				str.append('D');
+				str.append("D");
 				break;
 			case '4':
-				str.append('E');
+				str.append("E");
 				break;
 			}
 		}
 		// 変換した文字列を返す
-		return String.valueOf(str);
+		return str.toString();
 	}
 }
